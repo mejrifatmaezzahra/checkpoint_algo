@@ -1,0 +1,117 @@
+//1
+Algorithm DinstinctElements
+VAR
+i,j :integer;
+Sum :integer;
+Tab1:Array_of_integer[50];
+tab2 :Array_of_integer[50];
+
+BEGIN
+sum :=0 ;
+i:=0 ;
+FOR i from 0 to tab1.length-1 DO
+FOR j from 0 to tab2.length-1 DO
+if (tab1[i]&lt;&gt;tab2[j]) THEN
+sum :=sum+tab[i]
+END_IF
+END_FOR 
+END_FOR
+
+//2
+ALGORITHM distincts_elements
+VAR
+htab : HASH_TABLE<CHAR,INTEGER&gt>;
+tab1 : ARRAY_OF_INTEGER[50];
+tab2 : ARRAY_OF_INTEGER[50];
+i,count : INTEGER;
+sum : INTEGER;
+BEGIN
+Read(tab1);
+Sum :=0 ;
+
+FOR i FROM 0 TO tab1.length -1 STEP 1 DO
+IF (htab.lookup(tab1[i]) = TRUE) THEN
+count := htab.get(tab1[i]);
+write (‘element existe déjà ‘) ;
+ELSE
+htab.insert(tab1[i],1);
+END_IF
+END_FOR
+
+FOR i FROM 0 TO tab2.length -1 STEP 1 DO
+IF (htab.lookup(tab2[i]) = TRUE) THEN
+count := htab.get(tab2[i]);
+htab.insert(tab2[i],count+1);
+write (‘element existe déjà ‘) ;
+ELSE
+htab.insert(tab1 [i],1);
+sum :=sum+tab1[i]
+END_IF
+
+END_FOR
+FOR i FROM 0 TO tab2.length -1 STEP 1 DO
+IF (htab.get(tab2[i]) = 1) THEN
+Sum :=sum+tab2[i] ;
+BREAK;
+END_IF
+END_FOR
+
+FOR i FROM 0 TO tab2.length -1 STEP 1 DO
+IF (htab.get(tab2[i]) = 1) THEN
+ch := str[i];
+BREAK;
+END_IF
+END_FOR
+
+//3
+Algorithm OverlappingElements
+VAR
+i,j :integer;
+Sum :integer;
+Tab1:Array_of_integer[50];
+tab2 :Array_of_integer[50];
+
+BEGIN
+sum :=0 ;
+i:=0 ;
+FOR i from 0 to tab1.length-1 DO
+FOR j from 0 to tab2.length-1 DO
+if (tab1[i]==tab2[j]) THEN
+sum :=sum+tab[i]+tab[j];
+END_IF
+END_FOR 
+END_FOR
+
+//4
+ALGORITHM distincts_elements
+VAR
+htab : HASH_TABLE<CHAR,INTEGER>;
+tab1 : ARRAY_OF_INTEGER[50];
+tab2 : ARRAY_OF_INTEGER[50];
+i,count : INTEGER;
+sum : INTEGER;
+BEGIN
+Read(tab1);
+Sum :=0 ;
+
+FOR i FROM 0 TO tab1.length -1 STEP 1 DO
+IF (htab.lookup(tab1[i]) = TRUE) THEN
+count := htab.get(tab1[i]);
+htab.insert(tab1[i],count+1);
+ELSE
+htab.insert(tab1[i],1);
+END_IF
+END_FOR
+
+FOR i FROM 0 TO tab2.length -1 STEP 1 DO
+IF (htab.lookup(tab2[i]) = TRUE) THEN
+count := htab.get(tab2[i]);
+htab.insert(tab2[i],count+1);
+sum :=sum+(tab2[i]) ;
+ELSE
+htab.insert(tab2 [i],1);
+
+END_IF
+
+END_FOR
+Write(sum) ;
