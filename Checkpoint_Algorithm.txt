@@ -1,0 +1,38 @@
+//1
+ALGORITHM Sentence
+VAR
+i:integer; count:integer; ch:string;
+BEGIN
+FOR i FROM 0 TO ch.length
+IF (ch[i]<>' ') THEN count:=count+1
+END_IF
+END_FOR
+write(count)
+END
+
+//2
+ALGORITHM Word
+VAR
+i:integer; count':integer; ch:string;
+BEGIN
+FOR i FROM 0 TO ch.length
+IF (ch[i]:=' ' and (ch[i+1] in "A..Z" or"a..z"))
+ THEN count':=count'+1
+END_IF
+END_FOR
+write(count')
+END
+
+//3
+ALGORITHM Vowel
+VAR
+i:integer; countt:integer; ch:string;
+BEGIN
+FOR i FROM 0 TO ch.length
+IF (ch[i] in {a,e,i,o,u,y} or {A,E,I,O,U,Y})
+ THEN countt:=countt+1
+END_IF
+END_FOR
+write(countt)
+END
+
